@@ -1,8 +1,8 @@
 package com.practicum.playlistmaker
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
 import android.widget.Toast
 
@@ -19,20 +19,17 @@ class MainActivity : AppCompatActivity() {
 
 
         searchBtn.setOnClickListener {
-            showToast(String.format(toastPattern, getString(R.string.search_title)))
+            val intent = Intent(this@MainActivity, SearchActivity::class.java)
+            startActivity(intent)
         }
 
         mediaLibBtn.setOnClickListener {
-            showToast(String.format(toastPattern, getString(R.string.media_library_title)))
+            startActivity(Intent(this@MainActivity, MediaLibraryActivity::class.java))
         }
 
-        // anonymous class
-        val settingClickListener: View.OnClickListener = object : View.OnClickListener {
-            override fun onClick(p0: View?) {
-                showToast(String.format(toastPattern, getString(R.string.setting_title)))
-            }
+        settingBtn.setOnClickListener {
+            startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
         }
-        settingBtn.setOnClickListener(settingClickListener)
     }
 
     private fun showToast(text: String) {
