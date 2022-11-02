@@ -9,12 +9,20 @@ import android.widget.EditText
 import android.widget.ImageButton
 
 class SearchActivity : AppCompatActivity() {
+
+    companion object {
+        const val SEARCH_QUERY = "SEARCH_QUERY"
+    }
+
+    private lateinit var searchTextEdt: EditText
+    private lateinit var clearTextBtn: ImageButton
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_search)
 
-        val searchTextEdt = findViewById<EditText>(R.id.searchEditText)
-        val clearTextBtn = findViewById<ImageButton>(R.id.cleatTextBtn)
+       searchTextEdt = findViewById(R.id.searchEditText)
+       clearTextBtn = findViewById(R.id.cleatTextBtn)
 
         val searchTextWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -39,5 +47,18 @@ class SearchActivity : AppCompatActivity() {
         clearTextBtn.setOnClickListener {
             searchTextEdt.setText("")
         }
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        super.onSaveInstanceState(outState)
+        val tempSearchQuery = searchTextEdt.text.toString()
+        if (tempSearchQuery.isNotEmpty()) {
+            outState.putString(SEARCH_QUERY, tempSearchQuery)
+        }
+    }
+
+    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
+        super.onRestoreInstanceState(savedInstanceState)
+        searchTextEdt.setText(savedInstanceState.getString(SEARCH_QUERY, ""))
     }
 }
