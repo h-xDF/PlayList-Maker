@@ -4,10 +4,8 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
-import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
-    private val toastPattern = "You clicked on '%s' button"
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +28,5 @@ class MainActivity : AppCompatActivity() {
         settingBtn.setOnClickListener {
             startActivity(Intent(this@MainActivity, SettingsActivity::class.java))
         }
-    }
-
-    private fun showToast(text: String) {
-        Toast.makeText(this@MainActivity, text, Toast.LENGTH_LONG).show()
     }
 }
