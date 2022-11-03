@@ -9,8 +9,6 @@
     <ImageView
         android:id="@+id/back_btn"
         style="@style/IconStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
@@ -61,8 +59,6 @@
     <ImageButton
         android:id="@+id/shared_app_btn"
         style="@style/IconStyle"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
         android:backgroundTint="?attr/colorOnPrimary"
         android:src="@drawable/ic_shared"
         app:layout_constraintBottom_toBottomOf="@+id/shared_app_tittle"
@@ -84,8 +80,6 @@
     <ImageView
         android:id="@+id/support_agent_btn"
         style="@style/IconStyle"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
         app:layout_constraintBottom_toBottomOf="@+id/support_title"
         app:layout_constraintEnd_toEndOf="@+id/shared_app_btn"
         app:layout_constraintStart_toStartOf="@+id/shared_app_btn"
@@ -106,8 +100,6 @@
     <ImageButton
         android:id="@+id/agreement_btn"
         style="@style/IconStyle"
-        android:layout_width="24dp"
-        android:layout_height="24dp"
         android:backgroundTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/agreement_title"
         app:layout_constraintEnd_toEndOf="@+id/support_agent_btn"

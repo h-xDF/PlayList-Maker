@@ -25,6 +25,8 @@
     </style>
 
     <style name="IconStyle">
+        <item name="android:layout_width">@dimen/spacing_24</item>
+        <item name="android:layout_height">@dimen/spacing_24</item>
         <item name="android:backgroundTint">?attr/colorOnPrimary</item>
         <item name="tint">@color/white</item>
     </style>
