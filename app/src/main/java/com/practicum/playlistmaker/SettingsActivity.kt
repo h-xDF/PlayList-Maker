@@ -9,9 +9,7 @@ import android.widget.ImageView
 
 class SettingsActivity : AppCompatActivity() {
     companion object {
-        const val courseLink = "https://practicum.yandex.ru/learn/android-developer/"
         const val userEmail = "raralux@yandex.ru"
-        const val practicumOfferLink = "https://yandex.ru/legal/practicum_offer/"
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,7 +23,7 @@ class SettingsActivity : AppCompatActivity() {
         sharedAppBtn.setOnClickListener {
             val intent = Intent(Intent.ACTION_SEND)
             intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_TEXT, courseLink)
+            intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.android_course_link))
             startActivity(intent)
         }
 
@@ -45,9 +43,8 @@ class SettingsActivity : AppCompatActivity() {
         }
 
         userAgreementBtn.setOnClickListener {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(practicumOfferLink))
+            val intent = Intent(Intent.ACTION_VIEW, Uri.parse(getString(R.string.practicum_offer)))
             startActivity(intent)
         }
-
     }
 }

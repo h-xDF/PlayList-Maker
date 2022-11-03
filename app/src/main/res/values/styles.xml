@@ -37,7 +37,9 @@
 <!--        <item name="trackTint">@color/background_blue_48</item>-->
     </style>
 
-    <style name="IconStyle">
+    <style name="IconStyle"><!--
+        <item name="android:layout_width">24dp</item>
+        <item name="android:layout_height">24dp</item>-->
         <item name="android:backgroundTint">?attr/colorOnPrimary</item>
     </style>
 </resources>
