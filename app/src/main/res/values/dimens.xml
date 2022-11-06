@@ -4,5 +4,6 @@
     <dimen name="text_normal_16_sp">16sp</dimen>
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="double_spacing_16">16dp</dimen>
+    <dimen name="spacing_24">24dp</dimen>
     <dimen name="spacing_42">42dp</dimen>
 </resources>

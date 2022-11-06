@@ -4,6 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="@dimen/double_spacing_16"
     tools:context=".SearchActivity">
 
+    <TextView
+        android:id="@+id/header_title"
+        style="@style/TextViewHeader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/search_title"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/searchEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/double_spacing_16"
+        android:ems="10"
+        android:hint="@string/search_title"
+        android:inputType="textPersonName"
+        app:layout_constraintTop_toBottomOf="@+id/header_title" />
+
+    <ImageButton
+        android:id="@+id/cleatTextBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorOnPrimary"
+        android:inputType="text"
+        android:lines="1"
+        android:maxLength="15"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/searchEditText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/searchEditText"
+        app:srcCompat="@drawable/ic_close_24"
+        tools:visibility="visible" />
 </androidx.constraintlayout.widget.ConstraintLayout>

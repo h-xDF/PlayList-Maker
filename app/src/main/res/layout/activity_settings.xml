@@ -8,8 +8,7 @@
 
     <ImageView
         android:id="@+id/back_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/IconStyle"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_back"
@@ -17,51 +16,50 @@
 
     <TextView
         android:id="@+id/header_title"
+        style="@style/TextViewHeader"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/double_spacing_16"
         android:text="@string/setting_title"
-        android:textColor="@color/text_black"
-        android:textSize="@dimen/text_header_22_sp"
         app:layout_constraintBottom_toBottomOf="@+id/back_btn"
         app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintTop_toTopOf="@+id/back_btn" />
 
     <TextView
         android:id="@+id/theme_title"
+        style="@style/TextViewRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/dark_theme"
-        android:textSize="@dimen/text_normal_16_sp"
-        android:textColor="@color/black"
         android:layout_marginTop="@dimen/spacing_42"
+        android:text="@string/dark_theme"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/back_btn" />
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/theme_switch"
+        style="@style/SwitchColorStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/theme_title"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/theme_title" />
+        app:layout_constraintTop_toTopOf="@+id/theme_title"
+        app:layout_constraintVertical_bias="0.413" />
 
     <TextView
         android:id="@+id/shared_app_tittle"
+        style="@style/TextViewRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_42"
         android:text="@string/sharing_app"
-        android:textSize="@dimen/text_normal_16_sp"
-        android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/theme_title" />
 
     <ImageButton
         android:id="@+id/shared_app_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
+        style="@style/IconStyle"
+        android:backgroundTint="?attr/colorOnPrimary"
         android:src="@drawable/ic_shared"
         app:layout_constraintBottom_toBottomOf="@+id/shared_app_tittle"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,22 +69,19 @@
 
     <TextView
         android:id="@+id/support_title"
+        style="@style/TextViewRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_42"
         android:text="@string/support"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_normal_16_sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/shared_app_tittle" />
 
     <ImageView
         android:id="@+id/support_agent_btn"
-        android:layout_width="@dimen/spacing_42"
-        android:layout_height="@dimen/spacing_42"
-        android:backgroundTint="@color/white"
+        style="@style/IconStyle"
         app:layout_constraintBottom_toBottomOf="@+id/support_title"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/shared_app_btn"
         app:layout_constraintStart_toStartOf="@+id/shared_app_btn"
         app:layout_constraintTop_toTopOf="@+id/support_title"
         app:srcCompat="@drawable/ic_support_agent"
@@ -94,22 +89,20 @@
 
     <TextView
         android:id="@+id/agreement_title"
+        style="@style/TextViewRegular"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/spacing_42"
         android:text="@string/user_agreement"
-        android:textColor="@color/black"
-        android:textSize="@dimen/text_normal_16_sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/support_title" />
 
     <ImageButton
         android:id="@+id/agreement_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/white"
+        style="@style/IconStyle"
+        android:backgroundTint="?attr/colorOnPrimary"
         app:layout_constraintBottom_toBottomOf="@+id/agreement_title"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/support_agent_btn"
         app:layout_constraintStart_toStartOf="@+id/support_agent_btn"
         app:layout_constraintTop_toTopOf="@+id/agreement_title"
         app:srcCompat="@drawable/ic_arrow_forward"
