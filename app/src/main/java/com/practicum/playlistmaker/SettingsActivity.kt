@@ -30,7 +30,7 @@ class SettingsActivity : AppCompatActivity() {
         sendSupportAgentBtn.setOnClickListener {
             val shareIntent = Intent(Intent.ACTION_SENDTO)
             shareIntent.data = Uri.parse("mailto:")
-            shareIntent.putExtra(Intent.EXTRA_EMAIL, arrayOf(userEmail))
+            shareIntent.putExtra(Intent.EXTRA_EMAIL, userEmail)
             shareIntent.putExtra(
                 Intent.EXTRA_SUBJECT,
                 getString(R.string.email_subject)
