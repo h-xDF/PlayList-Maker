@@ -92,7 +92,6 @@ class SearchActivity : AppCompatActivity() {
         }
     }
 
-
     override fun onSaveInstanceState(outState: Bundle) {
         super.onSaveInstanceState(outState)
         val tempSearchQuery = searchTextEdt.text.toString()
