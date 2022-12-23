@@ -12,4 +12,7 @@
     <string name="practicum_offer">https://yandex.ru/legal/practicum_offer/</string>
     <string name="android_course_link">https://practicum.yandex.ru/learn/android-developer/</string>
     <string name="separator">•</string>
+    <string name="update">Обновить</string>
+    <string name="song_nothing_find">Ничего не нашлось</string>
+    <string name="song_not_internet">Проблема со связью\n\nЗагрузка не удалась. Проверьте подключение к интернету</string>
 </resources>
