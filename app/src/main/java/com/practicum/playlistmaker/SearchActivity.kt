@@ -119,7 +119,7 @@ class SearchActivity : AppCompatActivity() {
                     if (response.isSuccessful) {
                         hideViewError()
 
-                        if (response.body()?.results?.isNotEmpty() == true) {
+                        if ((response.body()?.resultCount ?: 0) > 0) {
                             tracks.addAll(response.body()?.results!!)
                             adapter.notifyDataSetChanged()
                         } else {
