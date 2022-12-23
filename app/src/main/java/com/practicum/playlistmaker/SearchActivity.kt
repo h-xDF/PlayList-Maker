@@ -9,6 +9,10 @@ import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
 import android.widget.ImageButton
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.practicum.playlistmaker.data.SearchAdapter
+import com.practicum.playlistmaker.mock.MockTrack
 
 class SearchActivity : AppCompatActivity() {
 
@@ -18,6 +22,7 @@ class SearchActivity : AppCompatActivity() {
 
     private lateinit var searchTextEdt: EditText
     private lateinit var clearTextBtn: ImageButton
+    private lateinit var trackRecycler: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,6 +30,9 @@ class SearchActivity : AppCompatActivity() {
 
         searchTextEdt = findViewById(R.id.searchEditText)
         clearTextBtn = findViewById(R.id.cleatTextBtn)
+        trackRecycler = findViewById(R.id.search_track_rv)
+        trackRecycler.layoutManager = LinearLayoutManager(this)
+        trackRecycler.adapter = SearchAdapter(MockTrack.tracks())
 
         val searchTextWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {

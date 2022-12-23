@@ -11,4 +11,5 @@
     <string name="email_body">Спасибо разработчикам и разработчицам за крутое приложение!</string>
     <string name="practicum_offer">https://yandex.ru/legal/practicum_offer/</string>
     <string name="android_course_link">https://practicum.yandex.ru/learn/android-developer/</string>
+    <string name="separator">•</string>
 </resources>
