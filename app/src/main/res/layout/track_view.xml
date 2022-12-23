@@ -40,14 +40,14 @@
 
             <TextView
                 android:id="@+id/artist_name_tv"
-                style="@style/TextView_item_track"
+                style="@style/TextViewItemTrack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="The Beatles" />
 
             <TextView
                 android:id="@+id/dot_separator"
-                style="@style/TextView_item_track"
+                style="@style/TextViewItemTrack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/spacing_3"
@@ -55,7 +55,7 @@
 
             <TextView
                 android:id="@+id/track_time_tv"
-                style="@style/TextView_item_track"
+                style="@style/TextViewItemTrack"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 tools:text="4:01" />

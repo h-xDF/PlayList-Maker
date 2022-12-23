@@ -23,7 +23,9 @@
         android:layout_marginTop="@dimen/double_spacing_16"
         android:ems="10"
         android:hint="@string/search_title"
+        android:imeOptions="actionDone"
         android:inputType="textPersonName"
+        android:singleLine="true"
         app:layout_constraintTop_toBottomOf="@+id/header_title" />
 
     <ImageButton
@@ -48,4 +50,37 @@
         android:layout_marginTop="@dimen/spacing_24"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/searchEditText" />
+
+    <ImageView
+        android:id="@+id/error_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/double_spacing_16"
+        app:layout_constraintBottom_toTopOf="@+id/error_tv"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/ic_song_empty_search" />
+
+    <TextView
+        android:id="@+id/error_tv"
+        style="@style/TextViewMediumSongError"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/double_spacing_16"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/searchEditText"
+        tools:text="@string/song_not_internet" />
+
+    <Button
+        android:id="@+id/update_btn"
+        style="@style/ButtonRoundStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginVertical="@dimen/double_spacing_16"
+        android:text="@string/update"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/error_tv" />
 </androidx.constraintlayout.widget.ConstraintLayout>

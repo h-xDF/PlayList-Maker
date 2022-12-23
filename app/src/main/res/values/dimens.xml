@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="text_header_22_sp">22sp</dimen>
+    <dimen name="text_normal_19_sp">19sp</dimen>
     <dimen name="text_normal_16_sp">16sp</dimen>
+    <dimen name="text_normal_14_sp">14sp</dimen>
     <dimen name="text_small_11_sp">11sp</dimen>
     <dimen name="spacing_8">8dp</dimen>
     <dimen name="double_spacing_16">16dp</dimen>
