@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Playlist maker</string>
+    <string name="app_preference">app_preference</string>
+    <string name="dark_mode_status">dark_mode_status</string>
+    <string name="song_history">song_history</string>
     <string name="search_title">Поиск</string>
     <string name="media_library_title">Медиатека</string>
     <string name="setting_title">Настройки</string>
@@ -15,4 +18,6 @@
     <string name="update">Обновить</string>
     <string name="song_nothing_find">Ничего не нашлось</string>
     <string name="song_not_internet">Проблема со связью\n\nЗагрузка не удалась. Проверьте подключение к интернету</string>
+    <string name="you_find">Вы искали</string>
+    <string name="clear_history">Очистить историю</string>
 </resources>
