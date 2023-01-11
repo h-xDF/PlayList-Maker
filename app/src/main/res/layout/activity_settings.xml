@@ -25,26 +25,18 @@
         app:layout_constraintStart_toEndOf="@+id/back_btn"
         app:layout_constraintTop_toTopOf="@+id/back_btn" />
 
-    <TextView
-        android:id="@+id/theme_title"
-        style="@style/TextViewRegular"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_42"
-        android:text="@string/dark_theme"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/back_btn" />
 
-    <androidx.appcompat.widget.SwitchCompat
+    <com.google.android.material.switchmaterial.SwitchMaterial
         android:id="@+id/theme_switch"
         style="@style/SwitchColorStyle"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/spacing_42"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toBottomOf="@+id/theme_title"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/theme_title"
-        app:layout_constraintVertical_bias="0.413" />
+        android:layout_gravity="start"
+        android:text="@string/dark_theme"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_title" />
 
     <TextView
         android:id="@+id/shared_app_tittle"
@@ -54,7 +46,7 @@
         android:layout_marginTop="@dimen/spacing_42"
         android:text="@string/sharing_app"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/theme_title" />
+        app:layout_constraintTop_toBottomOf="@+id/theme_switch" />
 
     <ImageButton
         android:id="@+id/shared_app_btn"
@@ -62,9 +54,11 @@
         android:backgroundTint="?attr/colorOnPrimary"
         android:src="@drawable/ic_shared"
         app:layout_constraintBottom_toBottomOf="@+id/shared_app_tittle"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/theme_switch"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/theme_switch"
         app:layout_constraintTop_toTopOf="@+id/shared_app_tittle"
+        app:layout_constraintVertical_bias="1.0"
         tools:ignore="ContentDescription" />
 
     <TextView
