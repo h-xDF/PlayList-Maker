@@ -8,8 +8,6 @@ import com.practicum.playlistmaker.R
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.practicum.playlistmaker.network.models.Track
-import java.text.SimpleDateFormat
-import java.util.*
 
 class SearchViewHolder(trackView: View) : RecyclerView.ViewHolder(trackView) {
     private val trackImageView = trackView.findViewById<ImageView>(R.id.cover_iv)
@@ -20,8 +18,7 @@ class SearchViewHolder(trackView: View) : RecyclerView.ViewHolder(trackView) {
     fun bind(track: Track) {
         artistNameTextView.text = track.artistName
         trackNameTextView.text = track.trackName
-        trackTimeTextView.text =
-            SimpleDateFormat("mm:ss", Locale.getDefault()).format(track.trackTimeMillis)
+        trackTimeTextView.text = track.getDurationFormat()
 
         Glide.with(itemView.context)
             .load(track.artworkUrl100)
