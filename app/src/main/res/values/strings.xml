@@ -20,4 +20,10 @@
     <string name="song_not_internet">Проблема со связью\n\nЗагрузка не удалась. Проверьте подключение к интернету</string>
     <string name="you_find">Вы искали</string>
     <string name="clear_history">Очистить историю</string>
+
+    <string name="duration_title">Длительность</string>
+    <string name="album_title">Альбом</string>
+    <string name="year_title">Год</string>
+    <string name="style_title">Жанр</string>
+    <string name="country_title">Страна</string>
 </resources>
