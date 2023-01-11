@@ -5,6 +5,7 @@ import com.google.gson.Gson
 import com.practicum.playlistmaker.network.models.Track
 
 class SearchHistory(private val pref: SharedPreferences, private val prefKey: String) {
+    private val jsonTemp = Gson()
 
     fun addTrack(track: Track) {
         var trackList = getHistory().toMutableList()
@@ -15,7 +16,7 @@ class SearchHistory(private val pref: SharedPreferences, private val prefKey: St
             trackList = trackList.subList(0, 10)
         }
 
-        val json = Gson().toJson(trackList)
+        val json = jsonTemp.toJson(trackList)
 
         pref.edit()
             .putString(prefKey, json)
@@ -23,7 +24,7 @@ class SearchHistory(private val pref: SharedPreferences, private val prefKey: St
     }
 
     fun clearHistory() {
-        val json = Gson().toJson(emptyArray<Track>())
+        val json = jsonTemp.toJson(emptyArray<Track>())
         pref.edit()
             .putString(prefKey, json)
             .apply()
@@ -31,6 +32,6 @@ class SearchHistory(private val pref: SharedPreferences, private val prefKey: St
 
     fun getHistory(): Array<Track> {
         val json = pref.getString(prefKey, "")
-        return Gson().fromJson(json, Array<Track>::class.java) ?: emptyArray()
+        return jsonTemp.fromJson(json, Array<Track>::class.java) ?: emptyArray()
     }
 }

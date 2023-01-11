@@ -69,6 +69,7 @@ class SearchActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         clearHistoryBtn = findViewById(R.id.history_clear_btn)
 
         hideViewError()
+        initViewState()
 
         val searchTextWatcher = object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
@@ -199,6 +200,14 @@ class SearchActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         errorImage.visibility = View.VISIBLE
 
         updateBtn.visibility = View.VISIBLE
+    }
+
+    fun initViewState() {
+        if (historyAdapter.isNotEmpty()) {
+            trackHistoryLayout.visibility = View.VISIBLE
+        } else {
+            trackHistoryLayout.visibility = View.GONE
+        }
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
