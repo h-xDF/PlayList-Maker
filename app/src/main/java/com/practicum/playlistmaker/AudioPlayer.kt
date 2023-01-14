@@ -67,7 +67,7 @@ class AudioPlayer : AppCompatActivity() {
         Glide.with(this)
             .load(track.getCoverArtwork())
             .placeholder(R.drawable.ic_default_track)
-            .fitCenter()
+            .centerCrop()
             .into(cover)
 
         trackName.text = track.trackName

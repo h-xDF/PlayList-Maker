@@ -1,215 +1,221 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".AudioPlayer">
+    android:layout_height="match_parent">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/left_border"
-        android:layout_width="wrap_content"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_begin="@dimen/spacing_24" />
+        tools:context=".AudioPlayer">
 
-    <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/right_border"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_end="@dimen/spacing_24" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/left_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="@dimen/spacing_24" />
 
-    <ImageView
-        android:id="@+id/back_btn"
-        style="@style/IconStyle"
-        android:layout_marginStart="@dimen/spacing_20"
-        android:layout_marginTop="@dimen/spacing_20"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_back"
-        tools:ignore="ContentDescription" />
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/right_border"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="@dimen/spacing_24" />
 
-    <ImageView
-        android:id="@+id/cover_iv"
-        android:layout_width="0dp"
-        android:layout_height="234dp"
-        android:layout_marginTop="@dimen/spacing_24"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/back_btn"
-        app:srcCompat="@drawable/ic_default_track" />
+        <ImageView
+            android:id="@+id/back_btn"
+            style="@style/IconStyle"
+            android:layout_marginStart="@dimen/spacing_20"
+            android:layout_marginTop="@dimen/spacing_20"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_back"
+            tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/track_name_tv"
-        style="@style/TextViewHeader"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_24"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/cover_iv"
-        tools:text="Yesterday (Remastered 2009)" />
+        <ImageView
+            android:id="@+id/cover_iv"
+            android:layout_width="0dp"
+            android:layout_height="312dp"
+            android:layout_marginTop="@dimen/spacing_24"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/back_btn"
+            app:srcCompat="@drawable/ic_default_track" />
 
-    <TextView
-        android:id="@+id/artist_name_tv"
-        style="@style/TextViewNormalAudioPlayer"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_12"
-        android:gravity="start"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/track_name_tv"
-        tools:text="The Beatles" />
+        <TextView
+            android:id="@+id/track_name_tv"
+            style="@style/TextViewHeader"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_24"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/cover_iv"
+            tools:text="Yesterday (Remastered 2009)" />
 
-    <ImageButton
-        android:id="@+id/save_track_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/play_btn"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toTopOf="@+id/play_btn"
-        app:srcCompat="@drawable/ic_plus_btn" />
+        <TextView
+            android:id="@+id/artist_name_tv"
+            style="@style/TextViewNormalAudioPlayer"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_12"
+            android:gravity="start"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/track_name_tv"
+            tools:text="The Beatles" />
 
-    <ImageButton
-        android:id="@+id/play_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_24"
-        android:backgroundTint="?attr/colorOnPrimary"
-        app:layout_constraintEnd_toStartOf="@+id/favorite_btn"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/save_track_btn"
-        app:layout_constraintTop_toBottomOf="@+id/artist_name_tv"
-        app:srcCompat="@drawable/ic_play_btn" />
+        <ImageButton
+            android:id="@+id/save_track_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/play_btn"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toTopOf="@+id/play_btn"
+            app:srcCompat="@drawable/ic_plus_btn" />
 
-    <ImageButton
-        android:id="@+id/favorite_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="?attr/colorOnPrimary"
-        app:layout_constraintBottom_toBottomOf="@+id/play_btn"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintTop_toTopOf="@+id/play_btn"
-        app:srcCompat="@drawable/ic_heart_btn" />
+        <ImageButton
+            android:id="@+id/play_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_24"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintEnd_toStartOf="@+id/favorite_btn"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/save_track_btn"
+            app:layout_constraintTop_toBottomOf="@+id/artist_name_tv"
+            app:srcCompat="@drawable/ic_play_btn" />
 
-    <TextView
-        android:id="@+id/current_duration_tv"
-        style="@style/TextViewNormalAudioPlayer"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/spacing_8"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/play_btn"
-        tools:text="0:30" />
+        <ImageButton
+            android:id="@+id/favorite_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorOnPrimary"
+            app:layout_constraintBottom_toBottomOf="@+id/play_btn"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintTop_toTopOf="@+id/play_btn"
+            app:srcCompat="@drawable/ic_heart_btn" />
 
-    <TextView
-        android:id="@+id/duration_title"
-        style="@style/TextViewRegularAudioPlayerTitle"
-        android:paddingTop="@dimen/spacing_12"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/duration_title"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/current_duration_tv" />
+        <TextView
+            android:id="@+id/current_duration_tv"
+            style="@style/TextViewNormalAudioPlayer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_8"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/play_btn"
+            tools:text="0:30" />
 
-    <TextView
-        android:id="@+id/duration_value"
-        style="@style/TextViewRegularAudioPlayerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/duration_title"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/duration_title"
-        tools:text="5:35" />
+        <TextView
+            android:id="@+id/duration_title"
+            style="@style/TextViewRegularAudioPlayerTitle"
+            android:paddingTop="@dimen/spacing_12"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/duration_title"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/current_duration_tv" />
 
-    <TextView
-        android:id="@+id/album_title"
-        style="@style/TextViewRegularAudioPlayerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/album_title"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/duration_title" />
+        <TextView
+            android:id="@+id/duration_value"
+            style="@style/TextViewRegularAudioPlayerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/duration_title"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/duration_title"
+            tools:text="5:35" />
 
-    <TextView
-        android:id="@+id/album_value"
-        style="@style/TextViewRegularAudioPlayerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/album_title"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/album_title"
-        app:layout_constraintTop_toBottomOf="@+id/duration_value"
-        tools:text="Yesterday (Remastered 2009)" />
+        <TextView
+            android:id="@+id/album_title"
+            style="@style/TextViewRegularAudioPlayerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/album_title"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/duration_title" />
 
-    <TextView
-        android:id="@+id/year_title"
-        style="@style/TextViewRegularAudioPlayerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/year_title"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/album_title" />
+        <TextView
+            android:id="@+id/album_value"
+            style="@style/TextViewRegularAudioPlayerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/album_title"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/album_title"
+            app:layout_constraintTop_toBottomOf="@+id/duration_value"
+            tools:text="Yesterday (Remastered 2009)" />
 
-    <TextView
-        android:id="@+id/year_value"
-        style="@style/TextViewRegularAudioPlayerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintBaseline_toBaselineOf="@+id/year_title"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintStart_toEndOf="@+id/year_title"
-        tools:text="1965" />
+        <TextView
+            android:id="@+id/year_title"
+            style="@style/TextViewRegularAudioPlayerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/year_title"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/album_title" />
 
-    <TextView
-        android:id="@+id/style_title"
-        style="@style/TextViewRegularAudioPlayerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/style_title"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/year_title" />
+        <TextView
+            android:id="@+id/year_value"
+            style="@style/TextViewRegularAudioPlayerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintBaseline_toBaselineOf="@+id/year_title"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintStart_toEndOf="@+id/year_title"
+            tools:text="1965" />
 
-    <TextView
-        android:id="@+id/style_value"
-        style="@style/TextViewRegularAudioPlayerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/style_title"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/style_title"
-        tools:text="Rock" />
+        <TextView
+            android:id="@+id/style_title"
+            style="@style/TextViewRegularAudioPlayerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/style_title"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/year_title" />
 
-    <TextView
-        android:id="@+id/country_title"
-        style="@style/TextViewRegularAudioPlayerTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/country_title"
-        app:layout_constraintVertical_bias="0"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/left_border"
-        app:layout_constraintTop_toBottomOf="@+id/style_title" />
+        <TextView
+            android:id="@+id/style_value"
+            style="@style/TextViewRegularAudioPlayerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/style_title"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/style_title"
+            tools:text="Rock" />
 
-    <TextView
-        android:id="@+id/country_value"
-        style="@style/TextViewRegularAudioPlayerValue"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_constraintBaseline_toBaselineOf="@+id/country_title"
-        app:layout_constraintEnd_toStartOf="@+id/right_border"
-        app:layout_constraintHorizontal_bias="1"
-        app:layout_constraintStart_toEndOf="@+id/country_title"
-        tools:text="Великобритания" />
+        <TextView
+            android:id="@+id/country_title"
+            style="@style/TextViewRegularAudioPlayerTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/country_title"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/left_border"
+            app:layout_constraintTop_toBottomOf="@+id/style_title" />
+
+        <TextView
+            android:id="@+id/country_value"
+            style="@style/TextViewRegularAudioPlayerValue"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBaseline_toBaselineOf="@+id/country_title"
+            app:layout_constraintEnd_toStartOf="@+id/right_border"
+            app:layout_constraintHorizontal_bias="1"
+            app:layout_constraintStart_toEndOf="@+id/country_title"
+            tools:text="Великобритания" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
