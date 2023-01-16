@@ -219,7 +219,7 @@ class SearchActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
 
     private fun openTrack(track: Track) {
         val intent = Intent(this, AudioPlayer::class.java)
-        intent.putExtra(NavigationKey.SAVE_TRACK.name, track)
+        intent.putExtra(NavigationKey.SAVE_TRACK, track)
         startActivity(intent)
     }
 

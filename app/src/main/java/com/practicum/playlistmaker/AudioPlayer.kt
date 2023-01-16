@@ -2,12 +2,13 @@ package com.practicum.playlistmaker
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.os.PersistableBundle
 import android.widget.ImageView
 import android.widget.TextView
 import com.bumptech.glide.Glide
 import com.practicum.playlistmaker.data.NavigationKey
 import com.practicum.playlistmaker.network.models.Track
+import java.time.LocalDateTime
+import java.time.format.DateTimeFormatter
 
 class AudioPlayer : AppCompatActivity() {
 
@@ -28,20 +29,10 @@ class AudioPlayer : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_audio_player)
-        track = intent.getSerializableExtra(NavigationKey.SAVE_TRACK.name) as Track
+        track = intent.getSerializableExtra(NavigationKey.SAVE_TRACK) as Track
 
         initUi()
         updateUI(track)
-    }
-
-    override fun onSaveInstanceState(outState: Bundle, outPersistentState: PersistableBundle) {
-        super.onSaveInstanceState(outState, outPersistentState)
-        outState.putSerializable(NavigationKey.SAVE_TRACK.name, track)
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        super.onRestoreInstanceState(savedInstanceState)
-        track = savedInstanceState.getSerializable(NavigationKey.SAVE_TRACK.name) as Track
     }
 
     private fun initUi() {
@@ -64,6 +55,9 @@ class AudioPlayer : AppCompatActivity() {
     }
 
     private fun updateUI(track: Track) {
+        val releaseDateFormat = LocalDateTime.parse(
+            track.releaseDate, DateTimeFormatter.ofPattern("yyyy-MM-dd'T'HH:mm:ss'Z'")
+        )
         Glide.with(this)
             .load(track.getCoverArtwork())
             .placeholder(R.drawable.ic_default_track)
@@ -74,7 +68,7 @@ class AudioPlayer : AppCompatActivity() {
         artistName.text = track.artistName
         totalDuration.text = track.getDurationFormat()
         albumName.text = track.collectionName
-        trackYear.text = track.releaseDate
+        trackYear.text = releaseDateFormat.year.toString()
         trackStyle.text = track.primaryGenreName
         trackCountry.text = track.country
     }
