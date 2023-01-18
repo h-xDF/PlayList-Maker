@@ -10,7 +10,7 @@ import com.practicum.playlistmaker.network.models.Track
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
-class AudioPlayer : AppCompatActivity() {
+class AudioPlayerActivity : AppCompatActivity() {
 
     private lateinit var backBtn: ImageView
     private lateinit var cover: ImageView
