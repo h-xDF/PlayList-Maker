@@ -4,12 +4,11 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.practicum.playlistmaker.R
-import com.practicum.playlistmaker.SearchHistory
 import com.practicum.playlistmaker.network.models.Track
 
 class SearchAdapter(
     private val tracks: List<Track>,
-    private val searchHistory: SearchHistory
+    private var itemClickListener: (Track) -> Unit
 ) : RecyclerView.Adapter<SearchViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SearchViewHolder {
         val layout = LayoutInflater.from(parent.context).inflate(R.layout.track_view, parent, false)
@@ -18,9 +17,7 @@ class SearchAdapter(
 
     override fun onBindViewHolder(holder: SearchViewHolder, position: Int) {
         holder.bind(tracks[position])
-        holder.itemView.setOnClickListener {
-            searchHistory.addTrack(tracks[position])
-        }
+        holder.itemView.setOnClickListener { itemClickListener(tracks[position]) }
     }
 
     override fun getItemCount(): Int {

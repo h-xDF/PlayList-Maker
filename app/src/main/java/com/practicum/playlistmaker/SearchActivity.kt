@@ -1,6 +1,7 @@
 package com.practicum.playlistmaker
 
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -12,6 +13,7 @@ import android.view.inputmethod.InputMethodManager
 import android.widget.*
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.practicum.playlistmaker.data.NavigationKey
 import com.practicum.playlistmaker.data.SearchAdapter
 import com.practicum.playlistmaker.data.SearchHistoryAdapter
 import com.practicum.playlistmaker.network.ItunesTransport
@@ -51,8 +53,13 @@ class SearchActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         setContentView(R.layout.activity_search)
         pref = getSharedPreferences(getString(R.string.app_preference), MODE_PRIVATE)
         searchHistory = SearchHistory(pref, HISTORY_PREF_KEY)
-        adapter = SearchAdapter(tracks, searchHistory)
-        historyAdapter = SearchHistoryAdapter(searchHistory.getHistory())
+        adapter = SearchAdapter(tracks) { track ->
+            searchHistory.addTrack(track)
+            openTrack(track)
+        }
+        historyAdapter = SearchHistoryAdapter(searchHistory.getHistory()) { track ->
+            openTrack(track)
+        }
 
         searchTextEdt = findViewById(R.id.searchEditText)
         clearTextBtn = findViewById(R.id.cleatTextBtn)
@@ -202,12 +209,18 @@ class SearchActivity : AppCompatActivity(), SharedPreferences.OnSharedPreference
         updateBtn.visibility = View.VISIBLE
     }
 
-    fun initViewState() {
+    private fun initViewState() {
         if (historyAdapter.isNotEmpty()) {
             trackHistoryLayout.visibility = View.VISIBLE
         } else {
             trackHistoryLayout.visibility = View.GONE
         }
+    }
+
+    private fun openTrack(track: Track) {
+        val intent = Intent(this, AudioPlayerActivity::class.java)
+        intent.putExtra(NavigationKey.SAVE_TRACK, track)
+        startActivity(intent)
     }
 
     override fun onSharedPreferenceChanged(sharedPreferences: SharedPreferences?, key: String?) {
